@@ -57,25 +57,26 @@ One histogram for each labels data (training, validation and testing) was render
 #### Testing histogram ####
   ![test.png](./histograms/test.png "Test histogram")
 
-###Design and Test a Model Architecture
+### Design and Test a Model Architecture
 
-####1. Description of image data preproces.
+#### 1. Description of image data preproces.
 
 A simple function was added to grayscale the images and normalize values.
- def normalize_image(X):
-    X_gs = np.zeros((32, 32, 1))
 
-    for x in range(0, 31):
-        for y in range(0, 31):
-            r = (float(X[x, y, 0]) - 128.000) / 128.000 * 0.333
-            g = (float(X[x, y, 1]) - 128.000) / 128.000 * 0.333
-            b = (float(X[x, y, 2]) - 128.000) / 128.000 * 0.333
-            X_gs[x, y, 0] = r + g + b
-    return X_gs
+    def normalize_image(X):
+      X_gs = np.zeros((32, 32, 1))
+
+      for x in range(0, 31):
+          for y in range(0, 31):
+              r = (float(X[x, y, 0]) - 128.000) / 128.000 * 0.333
+              g = (float(X[x, y, 1]) - 128.000) / 128.000 * 0.333
+              b = (float(X[x, y, 2]) - 128.000) / 128.000 * 0.333
+              X_gs[x, y, 0] = r + g + b
+      return X_gs
 
 The function is not fast, but reasonable for small samples, and works for this project.
 
-####2. Model Description:
+#### 2. Model Description:
 
 The model uses LeNet CNN with dropout
 
@@ -99,7 +100,7 @@ The model uses LeNet CNN with dropout
 
 Weights were initialized with a truncated normal with mean = 0 and stddev = 0.1
 
-####3. Description of model training process.
+#### 3. Description of model training process.
 
 Testing on a 2.5 GHz Intel Core i7 using following Hyper Parameters:
 epochs = 24
@@ -118,12 +119,14 @@ Accuracy is printed during epochs training.
 Session is eventually persisted in *model-training-result* file.  I also experimented with
 tensor-board to seek a graphic of my network.
 
-####4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
+#### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
-My final model results were:
-Training Accuracy = 0.996
-Validation Accuracy = 0.947
-Testing Accuracy = 0.930
+
+ My final model results were:
+
+    Training Accuracy = 0.996
+    Validation Accuracy = 0.947
+    Testing Accuracy = 0.930
 
 With a smaller batch size (128) and  10 epochs accuracy was low.
 The result gradually started to improve and I adjusted my values for epochs and
@@ -136,16 +139,21 @@ and to improve the probability.
 
 ### Test a Model on New Images
 
-#### 1. Following German signs were used.
+##### 1. Following German signs were used.
 
-![11_right_of_way.png](./untrained_dataset/11_right_of_way.png "Right Of Way")
-![13_yield.png](./untrained_dataset/13_yield.png "Yield")
-![1_speed_limit_30.png](./untrained_dataset/1_speed_limit_30.png "Speed Limit 30")
-![22_bumpyroad.png](./untrained_dataset/22_bumpyroad.png "Bumpy Road")
-![4_speed_limit_70.png](./untrained_dataset/4_speed_limit_70.png "Speed Limit 70")
-![7_speed_limit_100.png](./untrained_dataset/7_speed_limit_100.png "Speed Limit 100")
+  ![11_right_of_way.png](./untrained_dataset/11_right_of_way.png "Right Of Way")
 
-#### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
+  ![13_yield.png](./untrained_dataset/13_yield.png "Yield")
+
+  ![1_speed_limit_30.png](./untrained_dataset/1_speed_limit_30.png "Speed Limit 30")
+
+  ![22_bumpyroad.png](./untrained_dataset/22_bumpyroad.png "Bumpy Road")
+
+  ![4_speed_limit_70.png](./untrained_dataset/4_speed_limit_70.png "Speed Limit 70")
+
+  ![7_speed_limit_100.png](./untrained_dataset/7_speed_limit_100.png "Speed Limit 100")
+
+##### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
 Here are the results of the prediction:
 
@@ -162,7 +170,7 @@ Here are the results of the prediction:
 My model was able to correctly guess 5 of the 6 traffic signs giving an accuracy of 83.33333333333334%.  
 This is indeed a good outcome.
 
-####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
+#### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
 Image I:  The model incorrectly predicts the sign as a Yield sign instead of
 30 km/h sign.
