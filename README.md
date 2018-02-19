@@ -132,7 +132,7 @@ With a smaller batch size (128) and  10 epochs accuracy was low.
 The result gradually started to improve and I adjusted my values for epochs and
 batch size. I did my training using CPU.
 
-The LeNet architecture was applied based on course videos I watched and doing someo
+The LeNet architecture was applied based on course videos I watched and doing some
 independent R&D on LeNet as well as reading up on AlexNet,GoogLenet etc.
 Overall I feel confident that this model is accurate.  It can definitely be improved
 and to improve the probability.
@@ -167,8 +167,9 @@ Here are the results of the prediction:
 | Bumpy Road			      | No Entry									                    |
 
 
-My model was able to correctly guess 5 of the 6 traffic signs giving an accuracy of 83.33333333333334%.  
-This is indeed a good outcome.
+My model was able to correctly guess 5 of the 6 traffic signs giving an accuracy of:
+
+    83.33333333333334%.  This is indeed a good outcome.
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
