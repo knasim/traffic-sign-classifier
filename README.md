@@ -1,4 +1,4 @@
-#**Traffic Sign Recognition Writeup **
+### Traffic Sign Recognition Writeup ###
 
 ---
 
@@ -47,9 +47,15 @@ gray_scale_image = np.dot(X_test[i][...,:3], [0.333, 0.333, 0.333])
 
 
 One histogram for each labels data (training, validation and testing) was rendered:
-![training.png](./histograms/training.png "Training histogram")
-![validation.png](./histograms/validation.png "Validation histogram")
-![test.png](./histograms/test.png "Test histogram")
+
+  #### training histogram ####
+  ![training.png](./histograms/training.png "Training histogram")
+
+#### Validation histogram ####
+  ![validation.png](./histograms/validation.png "Validation histogram")
+
+#### Testing histogram ####
+  ![test.png](./histograms/test.png "Test histogram")
 
 ###Design and Test a Model Architecture
 
