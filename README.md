@@ -48,7 +48,7 @@ gray_scale_image = np.dot(X_test[i][...,:3], [0.333, 0.333, 0.333])
 
 One histogram for each labels data (training, validation and testing) was rendered:
 
-  #### training histogram ####
+  #### Training histogram ####
   ![training.png](./histograms/training.png "Training histogram")
 
 #### Validation histogram ####
